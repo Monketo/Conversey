@@ -1,0 +1,166 @@
+*{
+	box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-user-select: none;	
+	 margin:0;
+  padding:0;
+}
+body{
+ 
+  background:url('symphony.png');
+  overflow:hidden;
+  min-height: 100%;
+
+}
+.circle {
+	transform-origin:50% 50%;
+	-moz-transform-origin: 4100px 3490px;
+	
+	animation:circling 25s linear forwards infinite;
+}
+
+
+@keyframes circling{
+	0%{
+		transform:rotateZ(0deg)
+	}
+	100%{
+		transform:rotateZ(360deg);
+	}
+}
+@-moz-keyframes circling{
+	0%{
+		transform:rotateZ(0deg)
+	}
+	100%{
+		transform:rotateZ(360deg);
+	}
+}
+.homelogo{
+position:relative;
+max-width:15%;
+margin-top:5%;
+margin-left:2%;
+-webkit-transform:translateY(-30%) rotateX(180deg);
+-moz-transform: translateY(-30%)  rotateX(180deg);
+transform: translateY(-30%) rotateX(180deg);
+align-self:center;
+
+
+	
+}
+.main-button{
+	position:relative;
+	transition: 1s  ease-out;
+	align-self:center;
+	shape-rendering: geometricPrecision;
+
+	
+}
+line{
+	stroke-width:2;
+	stroke:black;
+	transition: .75s  ease-out;
+	-moz-transition:.75s  ease-out;
+	shape-rendering: geometricPrecision;
+
+}
+.main-button:hover .top{
+	transform:translateX(150px);
+	-moz-transform:translateX(150px);
+	
+}
+.main-button:hover .bottom{
+	transform:translateX(-150px);
+	-moz-transform:translateX(-150px);
+	
+}
+.main-button:hover .right{
+	transform:translateY(30px);
+	-moz-transform:translateY(30px);
+	
+}
+.main-button:hover .left{
+	transform:translateY(-30px);
+	-moz-transform:translateY(-30px)
+	
+}
+
+.main-button:hover{
+    background-color:rgba(192,192,192,0.4);
+	  cursor: pointer;
+  
+}
+.main-button:hover text{
+    fill:#fff;
+}
+.main-button:hover line{
+	stroke-width:4;
+	
+}
+.main-button .left,
+.main-button .right {
+	stroke-dasharray:40,20,40;
+}
+.main-button .top
+ {
+	stroke-dasharray:20,140,160;
+}
+.main-button .bottom {
+	stroke-dasharray:160,140,20;
+}
+
+
+rect{
+	fill:transparent;
+	width:100%;
+	height:100%;
+}
+
+.wrapper{
+	display:flex;
+	flex-direction:column;
+	min-height:100%;
+	
+
+	
+
+}
+.test{
+
+	
+	
+
+
+
+}
+text{
+	transition:.5s .3s;
+	-moz-transform: translateY(5px);
+	
+}
+.clearfix{
+  content: "";
+  display: table;
+  clear: both;
+	
+}
+.figure,
+rect{
+	transform:scale3d(1,1,1) ;
+}
+.line{
+	 stroke:black;
+	transform:scale()
+	transition:1.5s;
+	opacity:0.3;
+	
+	
+}
+a:hover .line{
+	stroke-dashoffset:0;
+	opacity:1;
+}
+.figure{
+	transform:translateX(10px);
+}

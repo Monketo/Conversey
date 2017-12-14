@@ -22,6 +22,10 @@ h1 {
   text-align: center;
 }
 
+.scaler{
+  cursor: pointer;
+}
+
 input[type="text"],
 input[type="password"],
 input[type="date"],
