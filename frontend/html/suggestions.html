@@ -9,41 +9,28 @@
 	</head>
 	<body>
 	<a class="link" href="index.html">
-	<img class='arrow' src="../images/arrow_back.svg">
+		<img class='arrow' src="arrow_back.svg">
 	</a>
 	<form action="#" method="post">
-	<h1>Suggest your question</h1>
-	<fieldset>
-	  <p class="name"> 
-	  <label for="name">Name</label> 
-        <input type="text" name="name" id="name" /> 
-        
-    </p> 
-	   <p class="topic"> 
-	 <label for="email">Email</label> 
-        <input type="text" name="email" id="email" /> 
-   
-    <p class="topic"> 
-	 <label for="topic">Topic:</label> 
-       <select id="topic" name="topic">
-	   </select>
-       
-    </p> 
-   </fieldset>
-   <fieldset>
- 
-    <p class="text"> 
-	<label for="text">Your question</label>
-        <textarea maxlength="75" name="text"></textarea> 
-		
-    </p> 
-   
-    <p class="submit"> 
-           <button type="submit">Suggest a question</button>
-    </p> 
-	</fieldset>
+		<h1>Suggest your question</h1>
+		<fieldset>
+			<p class="topic">
+				<label for="topic">Topic:</label>
+				<select id="topic" name="topic">
+				</select>
+			</p>
+		</fieldset>
+		<fieldset>
+			<p class="text">
+				<label for="text">Your question</label>
+				<textarea maxlength="75" name="text"></textarea>
+
+			</p>
+			<p class="submit">
+				<button type="submit">Suggest a question</button>
+			</p>
+		</fieldset>
 	</form>
-	
 	<script src="../js/homepagefunc.js"></script>
 	<script src="js/suggestions.js"></script>
 	</body>

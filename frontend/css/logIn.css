@@ -7,6 +7,12 @@
     margin: auto;
     text-align: center;
 }
+.signUp-form {
+    width: 300px;
+    margin: auto;
+    text-align: center;
+    overflow: auto;
+}
 
 .logIn {
     text-align: center;
