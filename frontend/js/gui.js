@@ -93,20 +93,17 @@ function mainfunc () {
     $('.main-button').transition({
       transform: 'translateY(200px)'
     }, 1200, function () {
-      $screen.fadeIn(1000)
+      $screen.fadeIn(1000);
 
-      $('.primary').addClass(fadeOutef).one(animationEnd, function () {
-        $('.primary').hide()
-        $('.tertiary,.secondary').show()
-        $('.tertiary,.secondary').addClass(fadeInef)
+      $('.primary, .primary1').addClass(fadeOutef).one(animationEnd, function () {
+        $('.primary, .primary1').hide();
+        $('.tertiary,.secondary').show();
+        $('.tertiary,.secondary').addClass(fadeInef);
       })
 
       clicked = true
     })
   }
-
-
-  $("")
 
 }
 

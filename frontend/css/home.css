@@ -383,7 +383,7 @@ width:50%;
 		transform-origin:429.5px 160px;
 		
 }
-*/
+
 .st0 {
     stroke: none;
    
@@ -445,7 +445,7 @@ bottom:0;
 @media only screen and (max-width:700px){
 	#nav a {
 		padding:5px 10px; 
-		transition.5;
+		transition:all ease 1s;
 		transform:none;
 		
 	}
