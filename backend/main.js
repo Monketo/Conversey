@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
+// var session = require('express-session');
 
 function configureEndpoints(app) {
 
@@ -9,7 +10,6 @@ function configureEndpoints(app) {
   app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, '../frontend/html/index.html'));
   });
-
 
   //Якщо не підійшов жоден url, тоді повертаємо файли з папки frontend
   app.use(express.static(path.join(__dirname, '../frontend/')));
@@ -22,6 +22,12 @@ function startServer(port) {
 
   //Налаштування виводу в консоль списку запитів до сервера
   app.use(morgan('dev'));
+  //
+  // app.use(session({
+  //   secret: 'work hard',
+  //   resave: true,
+  //   saveUninitialized: false
+  // }));
 
   //Розбір POST запитів
   app.use(bodyParser.urlencoded({ extended: false }));

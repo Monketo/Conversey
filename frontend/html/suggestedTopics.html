@@ -4,14 +4,11 @@
     <meta charset="UTF-8">
     <title>Suggested Topics</title>
     <link rel="stylesheet" href="../css/suggestedTopics.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
 </head>
 <body>
 <span class="header clearfix">
-    <img class="logo" src="../images/image.svg" >
+    <a href="/"> <img class="logo" src="../images/image.svg" ></a>
 </span>
 
 <div class="sugTop">
@@ -22,16 +19,25 @@
     <span class="topic"><span>health</span></span>
     <span class="question"><span>Is alcohol becoming as deadly as smoking?</span></span>
     <span id="stars-existing" class="starrr" data-rating="4">
-        <span class="glyphicon .glyphicon-star-empty glyphicon-star-empty firsr"></span>
-        <span class="glyphicon .glyphicon-star-empty glyphicon-star-empty second"></span>
-        <span class="glyphicon .glyphicon-star-empty glyphicon-star-empty third"></span>
-        <span class="glyphicon .glyphicon-star-empty glyphicon-star-empty fourth"></span>
-        <span class="glyphicon .glyphicon-star-empty glyphicon-star-empty fifth"></span>
+        <button class="glyphicon glyphicon-star-empty glyphicon-star-empty" id="1"></button>
+        <button class="glyphicon glyphicon-star-empty glyphicon-star-empty" id="2"></button>
+        <button class="glyphicon glyphicon-star-empty glyphicon-star-empty" id="3"></button>
+        <button class="glyphicon glyphicon-star-empty glyphicon-star-empty" id="4"></button>
+        <button class="glyphicon glyphicon-star-empty glyphicon-star-empty" id="5"></button>
     </span>
+        <button class="glyphicon glyphicon-ok"></button>
 </div>
 <footer>
     <p class="copyright">© 2017 Conversey.com </p>
     <a class="malemg" href="mailto:converseyfeedback@gmail.com"><img class="mail" src="../images/gmail.svg"></a>
 </footer>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"> </script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+<script type="text/javascript" src="../js/suggestedTopics.js"></script>
+
 </body>
 </html>

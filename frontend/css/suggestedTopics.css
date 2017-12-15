@@ -3,6 +3,24 @@ body {
     margin: 0px;
     min-width: 500px;
 }
+
+button{
+    background: none repeat scroll 0 0 transparent;
+    border: none;
+    outline: none;
+}
+
+.glyphicon-ok{
+    margin-left: 20px;
+    margin-bottom: 3px;
+    color: green;
+    transition: all 0.5s ease;
+}
+
+.glyphicon-ok:hover{
+    transform: scale(1.5) rotate3d(100, 200, 300, 181deg);
+}
+
 .header {
     width: 100%;
     height: 75px;

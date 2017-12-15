@@ -105,6 +105,9 @@ function mainfunc () {
     })
   }
 
+
+  $("")
+
 }
 
 $('.secondary').on('click', function () {
