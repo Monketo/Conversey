@@ -1,5 +1,9 @@
 {
-  "name": "Converseasdasdasdy",
+<<<<<<< HEAD
+||||||| merged common ancestors
+  "name": "Conversey",
+=======
+>>>>>>> Yurii
   "version": "1.0.0",
   "dependencies": {
     "bcrypt": "^1.0.3",
