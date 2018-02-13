@@ -1,5 +1,5 @@
 {
-  "name": "Conversey",
+  "name": "Conversenely",
   "version": "1.0.0",
   "dependencies": {
     "bcrypt": "^1.0.3",
