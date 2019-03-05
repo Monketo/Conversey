@@ -13,6 +13,9 @@ function configureEndpoints(app) {
   });
 
   app.get('/api/get-topics-list/', api.getTopicsList);
+  app.post('/api/get-questions-by-topic/', api.getQuestionsByTopic);
+  app.post('/api/add-topic/', api.addNewTopic);
+  app.post('/api/add-question/', api.addNewQuestion);
   app.post('/api/create-user/', api.createUser);
 
   //Якщо не підійшов жоден url, тоді повертаємо файли з папки frontend
