@@ -21,8 +21,9 @@
 </header>
 <div class="whole_page ">
 </div>
-<div class='header clearfix'>
-    <img class='logo' src='../images/image.svg'>
+<div class="header clearfix">
+
+    <a href="home.html"><img class='leftTopLogo' src='../images/image.svg'></a>
     <ul class="navigation ">
         <li class="scaler">
             <svg class="navelement clearfix" width="160" height="40" fill=#fff>
@@ -71,21 +72,21 @@
             </svg>
         </li>
 
-        <li class="scaler">
-            <svg class="navelement clearfix" width="160" height="40" fill=#fff>
+        <!--<li class="scaler">-->
+        <!--<svg class="navelement clearfix" width="160" height="40" fill=#fff>-->
 
-                <line class="top" x1="0" y1="0" x2="480" y2="0"/>
-                <line class="left" x1="0" y1="-80" x2="0" y2="40"/>
-                <line class="bottom" x1="-320" y1="40" x2="160" y2="40"/>
-                <line class="right" x1="160" y1="0" x2="160" y2="120"/>
-                <a xlink:href='suggestedTopics.html' class='transition '>
-                    <rect height='40' width='160'/>
-                    <text x="50%" y="50%" font-size="16" text-anchor="middle" alignment-baseline="central" fill="white">
-                        Suggested topics
-                    </text>
-                </a>
-            </svg>
-        </li>
+        <!--<line class="top" x1="0" y1="0" x2="480" y2="0"/>-->
+        <!--<line class="left" x1="0" y1="-80" x2="0" y2="40"/>-->
+        <!--<line class="bottom" x1="-320" y1="40" x2="160" y2="40"/>-->
+        <!--<line class="right" x1="160" y1="0" x2="160" y2="120"/>-->
+        <!--<a xlink:href='suggestedTopics.html' class='transition '>-->
+        <!--<rect height='40' width='160'/>-->
+        <!--<text x="50%" y="50%" font-size="16" text-anchor="middle" alignment-baseline="central" fill="white">-->
+        <!--Suggested topics-->
+        <!--</text>-->
+        <!--</a>-->
+        <!--</svg>-->
+        <!--</li>-->
     </ul>
 
 </div>
@@ -97,9 +98,23 @@
         </svg>
 
     </div>
-    <div class="buttons">
-        <svg class="main-button primary" width="160" height="40" fill=#2D767F>
 
+    <select class="listBoxTopic"
+            style="background-color: white; border: 1px solid rgb(44, 161, 108); width: 160px; height:40px; margin-right: 5px">
+        <option value="selectTopic" selected>Select section</option>
+        <option value="technologies">Technologies</option>
+        <option value="medicine">Medicine</option>
+        <option value="society">Society</option>
+        <option value="age">Age</option>
+        <option value="resources">Resources</option>
+        <option value="health">Health</option>
+        <option value="fashion">Fashion</option>
+
+    </select>
+    <div class="buttons">
+
+
+        <svg class="main-button primary" width="160" height="40" fill=#2D767F>
             <line class="top" x1="-160" y1="0" x2="160" y2="0"/>
             <line class="left" x1="0" y1="0" x2="0" y2="90"/>
             <line class="bottom" x1="0" y1="40" x2="320" y2="40"/>
@@ -108,6 +123,7 @@
                 topic
             </text>
         </svg>
+
         <svg class="main-button primary1" width="160" height="40" fill=#2D767F>
 
             <line class="top" x1="-160" y1="0" x2="160" y2="0"/>
@@ -119,6 +135,15 @@
                     Suggest a topic
                 </text>
             </a>
+        </svg>
+        <svg class="main-button primary2" width="160" height="40" fill=#2D767F>
+            <line class="top" x1="-160" y1="0" x2="160" y2="0"/>
+            <line class="left" x1="0" y1="0" x2="0" y2="90"/>
+            <line class="bottom" x1="0" y1="40" x2="320" y2="40"/>
+            <line class="right" x1="160" y1="-60" x2="160" y2="50"/>
+            <text x="50%" y="50%" font-size="16" text-anchor="middle" alignment-baseline="central" fill="black">
+                Reset
+            </text>
         </svg>
         <svg class="main-button secondary" width="160" height="40" fill=#2D767F>
 

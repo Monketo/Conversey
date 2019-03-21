@@ -42,6 +42,17 @@ button{
     display: table;
     clear: both;
 }
+.leftTopLogo {
+    position: relative;
+    transform: scale(0.8);
+    margin-left: 40px;
+    align-self: center;
+    transition: all 1s ease;
+}
+.leftTopLogo:hover{
+    transform: scale(1.2);
+}
+
 .logo {
     position: relative;
     transform: scale(0.8);
@@ -79,6 +90,7 @@ footer .copyright {
     flex-grow: 1;
     margin-top: 20px;
 }
+
 
 .malemg {
     width: 50px;

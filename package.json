@@ -9,19 +9,19 @@
     "eslint": "^4.13.1",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
-    "grunt": "^1.0.1",
-    "grunt-browserify": "^5.2.0",
-    "grunt-contrib-watch": "^1.0.0",
+    "grunt": "^1.0.3",
+    "grunt-browserify": "^5.3.0",
+    "grunt-contrib-watch": "^1.1.0",
     "kerberos": "0.0.23",
     "mongodb": "^3.0.0-rc0",
     "mongodb-core": "^3.0.0-rc0",
     "mongoose": "^4.13.7",
-    "morgan": "^1.9.0",
+    "morgan": "^1.9.1",
     "session": "^0.1.0"
   },
   "scripts": {
-      "prestart": "mongod --fork --logpath /dev/null",
-      "start": "node server.js",
-      "poststart": "mongod --shutdown"
-    }
+    "prestart": "mongod --fork --logpath /dev/null",
+    "start": "node server.js",
+    "poststart": "mongod --shutdown"
+  }
 }
