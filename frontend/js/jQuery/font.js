@@ -1,3 +1,14 @@
+
+var anim_classes = {
+  bounce: 'animated bounceInDown',
+  animationEnd: 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+  bounceOutLeft: 'animated fadeOutUp',
+  bounceInLeft: 'animated zoomInUp',
+  fadeOutef: 'animated fadeOut',
+  fadeInef: 'animated fadeIn'
+};
+
+
 function test(){
 
 var s=Snap('#test');
@@ -35,10 +46,10 @@ $('tspan').each(function(index){
    console.log('quitting');
    $('.no_questions,.whole_page').show();
    $('.filled').text(arrayOfTopics);
-   $('.whole_page').addClass('animated fadeIn').one(animationEnd,function(){
+   $('.whole_page').addClass('animated fadeIn').one(anim_classes.animationEnd,function(){
    $(this).removeClass('animated fadeIn')
    });
-	$alert.addClass('animated bounceIn').one(animationEnd,function(){
+	$alert.addClass('animated bounceIn').one(anim_classes.animationEnd,function(){
 	$(this).removeClass('animated bouceIn')
 	});
 	

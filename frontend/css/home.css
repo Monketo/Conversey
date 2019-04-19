@@ -367,9 +367,8 @@ width:50%;
 }
 .st1{
 	animation:rotate 10s linear infinite forwards;
-	transform-origin:545.105px 307.745px;
-	-webkit-transform-origin:50% 50%;
-	;
+	/* transform-origin: 644.105px 307.745px; */
+	-webkit-transform-origin: 57% 38.5%;
 }
 .st2{
 	animation:rotate 4s linear infinite forwards;

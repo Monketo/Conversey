@@ -1,13 +1,16 @@
 var bcrypt = require('bcryptjs');
-
 var mongo = require('mongoose');
+
 mongo.connect('mongodb://localhost:27017/Conversey', {
   useMongoClient: true
 });
+
 var db = mongo.connection;
+
 db.on('error',	function	(err)	{
   console.log('connection	error:',	err.message);
 });
+
 db.once('open',	function	callback	()	{
   console.log("Connected to DB!");
 });
@@ -51,6 +54,7 @@ var QuestionSchema = new mongo.Schema({
   creator:{type: mongo.Schema.Types.ObjectId, ref: 'User'},
   rate: Number
 });
+
 var Question = mongo.model('Question', QuestionSchema);
 
 
@@ -153,3 +157,4 @@ exports.addNewQuestion = addNewQuestion;
 exports.retrieveQuestionsByTopic = retrieveQuestionsByTopic;
 exports.requiresLogin = requiresLogin;
 exports.addNewUser = addNewUser;
+

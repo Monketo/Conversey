@@ -50,7 +50,7 @@ button{
     transition: all 1s ease;
 }
 .leftTopLogo:hover{
-    transform: scale(1.2);
+    transform: scale(.9);
 }
 
 .logo {
