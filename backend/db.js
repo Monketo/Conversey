@@ -28,7 +28,10 @@ var UserSchema = new mongo.Schema({
     required: true,
     trim: true
   },
-  password: String
+  password: {
+    type: String,
+    required: true
+  }
 });
 
 var TopicSchema = new mongo.Schema({
@@ -41,7 +44,6 @@ var TopicSchema = new mongo.Schema({
 });
 
 var Topic = mongo.model('Topic', TopicSchema);
-var User = mongo.model('User',	UserSchema);
 
 var QuestionSchema = new mongo.Schema({
   question: {
@@ -50,9 +52,8 @@ var QuestionSchema = new mongo.Schema({
   	required: true,
   	trim: true
   },
-  topic: {type: mongo.Schema.Types.ObjectId, ref: 'Topic'},
-  creator:{type: mongo.Schema.Types.ObjectId, ref: 'User'},
-  rate: Number
+  topic: {type: mongo.Schema.Types.ObjectId, ref: 'Topic', required: true},
+  creator:{type: mongo.Schema.Types.ObjectId, ref: 'User'}
 });
 
 var Question = mongo.model('Question', QuestionSchema);
@@ -77,6 +78,17 @@ UserSchema.statics.authenticate = function (email, password, callback) {
       })
     });
 }
+
+UserSchema.pre('save', function (next) {
+  var user = this;
+  bcrypt.hash(user.password, 10, function (err, hash){
+    if (err) {
+      return next(err);
+    }
+    user.password = hash;
+    next();
+  })
+});
 
 function requiresLogin(req, res, next) {
   if (req.session && req.session.userId) {
@@ -106,24 +118,36 @@ function retrieveTopics(){
 	return Topic.find({});
 }
 
-function retrieveQuestionsByTopic(topic_name){
-	var o_id = Topic.findOne({title: topic_name})._id;
-	return Question.find({topic: o_id});
+async function retrieveQuestionsByTopic(topic_name){
+	return await Topic.findOne({title: topic_name}).then(async function(topic){
+     return await Question.find({topic: topic._id}).exec(function(err, docs) {
+      if (!err){
+      var results = Array();
+      docs.forEach(function(doc){
+        results.push(doc.question);
+      })
+      return results;
+      } else {
+        console.err("Error! Topics couldn't be retrieved.");
+      }
+    });
+  });
 }
 
 function addNewQuestion(topic_name, question){
-	var o_id = Topic.findOne({title: topic_name})._id;
-	var question = new Question({
-		question: question,
-		topic: o_id
-	});
-  	question.save(function (err, question_db) {
-	    if(!err){
-	      console.log(question_db._id);
-	    } else {
-	      console.err("Error! Question hasn't been added.");
-	    }
+	Topic.findOne({title: topic_name}).then(function(topic){
+  	var question = new Question({
+  		question: question,
+  		topic: topic._id
   	});
+  	question.save(function (err, question_db) {
+      if(!err){
+        console.log(question_db._id);
+      } else {
+        console.err("Error! Question hasn't been added.");
+      }
+  	});
+  });
 }
 
 function addNewUser(email, username, password){
@@ -151,6 +175,7 @@ function addNewUser(email, username, password){
   })
 }
 
+var User = mongo.model('User',  UserSchema);
 exports.addNewTopic = addNewTopic;
 exports.retrieveTopics = retrieveTopics;
 exports.addNewQuestion = addNewQuestion;

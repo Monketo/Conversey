@@ -16,18 +16,9 @@ exports.getTopicsList = function(req, res) {
 };
 
 exports.getQuestionsByTopic = function(req, res) {
-  var query = db.retrieveQuestionsByTopic(req.body.topic_name);
-  query.exec(function(err, docs) {
-    	if (!err){
-		  var results = Array();
-		  docs.forEach(function(doc){
-		  	results.push(doc.question);
-		  })
-		  res.send({questions: results});
-    	} else {
-    		console.err("Error! Topics couldn't be retrieved.");
-    	}
-    });
+  db.retrieveQuestionsByTopic(req.body.topic_name).then(function(results){
+  	  res.send({questions: results})
+  });
 };
 
 exports.addNewQuestion = function(req, res) {
@@ -40,6 +31,6 @@ exports.addNewTopic = function(req, res) {
   res.sendStatus(200);
 };
 
-exports.createUser = function () {
+// exports.createUser = function () {
 
-}
+// }
