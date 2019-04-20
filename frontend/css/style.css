@@ -326,6 +326,7 @@ text{
 	 position:fixed;
 	 bottom:0;
 	 background-color:rgba(59, 176, 119, 1);
+	 z-index:10;
 	
 	
  }

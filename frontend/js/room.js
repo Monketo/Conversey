@@ -16,19 +16,7 @@ var $room_header = $('.room_header');
 var $room_topic = $('.select_topic');
 
 
-
 $( document ).ready(function() {
-console.log('In here');
-
-// $('.whole_page').addClass(anim_classes.fadeOutef).one(anim_classes.animationEnd, function () {
-//     $(this).removeClass(anim_classes.fadeOutef)
-//     $(this).hide()
-//   })
-
-//   $alert.addClass('animated bounceOutUp').one(anim_classes.animationEnd, function () {
-//     $(this).removeClass('animated bounceOutUp')
-//     $(this).hide()
-//   });
 
    $('.no_questions,.whole_page').show();
    $('.whole_page').addClass('animated fadeIn').one(anim_classes.animationEnd,function(){
@@ -79,12 +67,22 @@ $join_btn.click(function(){
 
 $room_topic.click(function(){
 	var topic = $('.select_topics').val()
-	console.log(topic);
 	$('.topic_chooser').addClass('animated bounceOutUp');
 	get_questions_by_topic(topic);
 
 })
 
+var generate_room = function(){
+  var questions_list = $('.questions li').toArray().map(e => e.outerText); 
+  var topic = $('.select_topics').val()
+  var room_id = $room_field.val()
+  room = new Room(room_id,topic,questions_list)
+  room_json = room.toJSON()
+  
+
+
+
+}
 
 class Room {
   constructor(id,topic,questions_list){
@@ -101,6 +99,7 @@ class Room {
     };
 }
 }
+
 
 
 

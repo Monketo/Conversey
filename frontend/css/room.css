@@ -138,3 +138,33 @@
 .topic_chooser h1{
 	color: #8a97a0 !important;
 }
+
+.questions{
+	display: block;
+	margin: 20px;
+	text-align: center;
+}
+
+.questions li{
+	color: black;
+	padding:12px;
+}
+
+.trash{
+	background-color: #FF4136;
+	color: white;
+	padding:2px;
+	margin:5px;
+	text-align: left;
+	scale: 1;
+	cursor: pointer;
+}
+.edit{
+	background-color: #0074D9;
+	color: white;
+	padding:2px;
+	margin:5px;
+	text-align: left;
+	scale: 1;
+	cursor: pointer;
+}
