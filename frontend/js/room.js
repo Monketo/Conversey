@@ -14,6 +14,7 @@ var $room_field = $('.room_id');
 var $room_welcome = $('.room_id_text');
 var $room_header = $('.room_header');
 var $room_topic = $('.select_topic');
+var $room_submit = $('.submit_questions');
 
 
 $( document ).ready(function() {
@@ -68,21 +69,37 @@ $join_btn.click(function(){
 $room_topic.click(function(){
 	var topic = $('.select_topics').val()
 	$('.topic_chooser').addClass('animated bounceOutUp');
+	$('.topic_chooser').hide(500);
+	
+
 	get_questions_by_topic(topic);
 
+	$('.submit_questions').css(
+		{'display':'block',
+		'transition': 'display 2s ease-in-out'});
+
+});
+
+$room_submit.click(function(){
+
+	generate_room();
 })
 
 var generate_room = function(){
+
   var questions_list = $('.questions li').toArray().map(e => e.outerText); 
   var topic = $('.select_topics').val()
   var room_id = $room_field.val()
   room = new Room(room_id,topic,questions_list)
   room_json = room.toJSON()
-  
-
-
-
+  console.log("Room json", room_json);
 }
+
+
+$(document).on('click', '.trash', function(){
+$(this).parents('li').remove();
+});
+
 
 class Room {
   constructor(id,topic,questions_list){

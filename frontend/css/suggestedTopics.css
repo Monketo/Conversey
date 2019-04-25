@@ -152,7 +152,7 @@ footer .copyright {
     font-family: 'Glyphicons Halflings';
     line-height: 1;
     -webkit-font-smoothing: antialiased;
-    transform: scale(1.5);
+    /* transform: scaleY(1.5) scaleX(1.5); */
 }
 .mail{
     transition: all 1s ease;

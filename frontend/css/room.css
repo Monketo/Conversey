@@ -29,6 +29,7 @@
 	/* font-family: Georgia, "Times New Roman", Times, serif; */
 	background: rgba(255,255,255,.1);
 	border: none;
+	display: block;
 	border-radius: 4px;
 	font-size: 15px;
 	margin: 0;
@@ -75,11 +76,11 @@
 	border-radius: 15px 15px 15px 0px;
 }
 
-.form-style-5 input[type="submit"],
-.form-style-5 input[type="button"]
+.form-style-5 input,
+.form-style-5 input
 {
 	position: relative;
-	display: block;
+	display: block; 
 	padding: 10px 20px 10px 20px;
 	color: #FFF;
 	margin: 0 auto;
@@ -141,7 +142,7 @@
 
 .questions{
 	display: block;
-	margin: 20px;
+	margin: 60px 20px;
 	text-align: center;
 }
 
@@ -168,3 +169,21 @@
 	scale: 1;
 	cursor: pointer;
 }
+
+.form-style-5 .submit_questions{
+	display: none;
+	max-width: 200px;
+}
+
+[contenteditable="true"]:active,
+[contenteditable="true"]:focus{
+border:none;
+outline:none;
+}
+
+
+/*[contenteditable="true"]:focus::before{
+content:"Editing...   ";
+}
+*/
+
