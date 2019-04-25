@@ -47,6 +47,7 @@ exports.getRoomData = function(req, res) {
 		res.sendStatus(404);
   }
   var roomData = {
+    title: RoomsData[roomId].title,
   	topic: RoomsData[roomId].topic,
   	questions: RoomsData[roomId].questions_list
   }

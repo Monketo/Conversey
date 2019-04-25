@@ -1,6 +1,6 @@
-
+var arr = [];
 var starter = function(){
-   $(document).ready( function() {
+
 	//Just fading out of the main page, and alert box appearance
 	$('.no_questions,.whole_page').show();
 	$('.whole_page').addClass('animated fadeIn').one(anim_classes.animationEnd,function(){
@@ -11,18 +11,7 @@ var starter = function(){
 	$(this).removeClass('animated bouceIn')
 	});
 
- });
-
-$('#exit-btn').on('click', function(){
-	window.location.replace("/");
-});
-
-$('#extend-btn').on('click', function(){
-	console.log(new_arr);
-	getquestion(randomized=false);
-	$('#test').empty();
-	test();
-});
+}
 
 var checkLinkParams = function(){
 
@@ -41,12 +30,60 @@ var checkLinkParams = function(){
 }
 
 var displayFailure = function(){
-console.log('Plak-plak')
+	console.log('Plak-plak')
+}
+
+var getquestion = function (questions_arr, randomized = true) {
+console.trace();
+  var index = 0;
+  if (randomized) {
+    index = Math.floor(Math.random() * questions_arr.length)
+  }
+  get_question = questions_arr[index];
+  var indexOfQuestion = questions_arr.indexOf(get_question);
+
+  if (questions_arr.length > 0) { //trying to avoid repeating of questions 
+    questions_arr.splice(indexOfQuestion, 1);
+  }
 }
 
 var displayData = function(data, room_id){
-$room_welcome.html(room_id);
-$room_header.css("display","block");
+	console.trace();
+    $room_welcome.text(data.title);
+    $room_header.css("display","block");
+	var topic_name = data.topic;
+	arrayOfTopics = [topic_name];
+	arr = data.questions;
+	var $topic = $('#topic');
+	getquestion(arr, randomized=false);
+	$('.main-button').transition({
+	transform: 'translateY(200px)'
+	}, 200, function () {
+	$('.container').fadeIn(100);
+		$topic.text(topic_name);
+		$topic.show();
+		$topic.removeClass(anim_classes.bounceOutLeft);
+		$topic.addClass(anim_classes.bounce).one(anim_classes.animationEnd, function () {
+		  $topic.removeClass(anim_classes.bounce)
+		  test() 
+		});
+		$('.main-button').show();
+		$('.main-button').addClass(anim_classes.fadeInef);
+	})
+   
 }
 
-checkLinkParams();
+$('#exit-btn').on('click', function(){
+	window.location.replace("/");
+});
+
+$('#extend-btn').on('click', function(){
+	console.log('Indside extend');
+	getquestion(arr, randomized=false);
+	$('#test').empty();
+	test();
+});
+
+$(function() {
+	checkLinkParams();
+});

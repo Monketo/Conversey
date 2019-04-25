@@ -27,7 +27,7 @@ function uuidv4() {
 
 var get_room = function(room_id){
   console.log(room_id);
-  $.get('/api/get-room-data/',{roomId:room_id})
+  $.post('/api/get-room-data/',{roomId:room_id})
     .done(function(data){
       displayData(data,room_id);
     })
@@ -41,21 +41,23 @@ var get_room = function(room_id){
 var generate_room = function(){
 
   var questions_list = $('.questions li').toArray().map(e => e.outerText); 
-  var topic = $('.select_topics').val()
-  var room_id = uuidv4()
+  var topic = $('.select_topics').val();
+  var room_title = $('#room_title').val();
+  var room_id = uuidv4();
 
-  room = new Room(room_id,topic,questions_list)
+  room = new Room(room_id,room_title, topic,questions_list)
   room_json = room.toJSON()
 
   $.post('/api/add-room/',room_json)
    .done(function(){
-    window.location.href = "./room_join.html#displayData&room_id="+room_id;
+      window.location.href = "./room_join.html#displayData&room_id="+room_id;
    })
 }
 
 class Room {
-  constructor(id,topic,questions_list){
+  constructor(id, title, topic, questions_list){
     this.id = id;
+    this.title = title;
     this.topic = topic;
     this.questions_list = questions_list;
   }
@@ -63,13 +65,13 @@ class Room {
   toJSON() {
     return {
       id: this.id,
+      title: this.title,
       topic:  this.topic,
       questions_list:   this.questions_list
     };
-}
+  }
 }
 
-var new_arr = [123];
 $join_btn.click(function(){
 	//Animation part here
     var room_id = $room_field.val()
@@ -85,32 +87,7 @@ $join_btn.click(function(){
       $(this).hide()  
     })
 
-    $room_welcome.text(room_id);
-    $room_header.css("display","block");
-    $.post('/api/get-room-data/', {roomId:room_id})
-          .done(function( data ) {
-      var topic_name = data.topic;
-      new_arr = data.questions;
-      var $topic = $('#topic');
-      $('#test').empty();
-      $('.main-button').transition({
-        transform: 'translateY(200px)'
-      }, 1200, function () {
-        $('.container').fadeIn(1000);
-        console.log(new_arr);
-        getquestion(randomized=false);
-        $topic.text(topic_name);
-        $topic.show();
-        $topic.removeClass(anim_classes.bounceOutLeft);
-        $topic.addClass(anim_classes.bounce).one(anim_classes.animationEnd, function () {
-          $topic.removeClass(anim_classes.bounce)
-          test() 
-        });
-        $('.main-button').show();
-        $('.main-button').addClass(anim_classes.fadeInef);
-        console.log(new_arr);
-      })
-    })
+    get_room(room_id);
   });
 
 

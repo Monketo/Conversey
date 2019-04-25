@@ -45,16 +45,16 @@ var pickProperty = function (obj, obj2) { //picking a first element, then replac
 
 var new_arr = pickProperty(shuffled, questions_test).slice(0);
 
-var getquestion = function (randomized = true) {
+var getquestion = function (questions_arr=new_arr, randomized = true) {
   var index = 0;
   if (randomized) {
-    index = Math.floor(Math.random() * new_arr.length)
+    index = Math.floor(Math.random() * questions_arr.length)
   }
-  get_question = new_arr[index];
-  var indexOfQuestion = new_arr.indexOf(get_question)
+  get_question = questions_arr[index];
+  var indexOfQuestion = questions_arr.indexOf(get_question)
 
-  if (new_arr.length > 0) { //trying to avoid repeating of questions 
-    new_arr.splice(indexOfQuestion, 1)
+  if (questions_arr.length > 0) { //trying to avoid repeating of questions 
+    questions_arr.splice(indexOfQuestion, 1)
   }
 }
 
