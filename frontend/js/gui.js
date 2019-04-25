@@ -125,6 +125,21 @@ function mainfunc (topic_name) {
 
 }
 
+$('.primary2').on('click', function () {
+    var $start_btns = $('.primary, .primary1, #mainTopicBtn')
+                .removeClass(anim_classes.fadeOutef);
+    var $test_btns = $('.tertiary,.secondary, .primary2')
+                    .removeClass(anim_classes.fadeInef);
+    $test_btns.hide();
+    $screen.fadeOut(1000, function() {
+      $start_btns.show();
+      $('.main-button').transition({
+        transform: 'translateY(-4px)'
+      }, 1200)
+    });
+    clicked = false;
+})
+
 $('.secondary').on('click', function () {
 
   new_arr = pickProperty(shuffled, questions_test).slice(0)
