@@ -72,6 +72,34 @@
 </div>
 
 <h1 class='room_header'>Welcome to room <span class ='room_id_text'></span></h1>
+<div class='wrapper'>
+    <div class="container clearfix" style="display:none;">
+        <h1 id="topic"></h1>
+
+        <svg id='test' width="500" height="300">
+        </svg>
+
+    </div>
+    <div class="buttons">
+        <svg class="main-button" id="exit-btn" width="160" height="40" fill=#2D767F>
+            <line class="top" x1="-160" y1="0" x2="160" y2="0"/>
+            <line class="left" x1="0" y1="0" x2="0" y2="90"/>
+            <line class="bottom" x1="0" y1="40" x2="320" y2="40"/>
+            <line class="right" x1="160" y1="-60" x2="160" y2="50"/>
+            <text x="50%" y="50%" font-size="16" text-anchor="middle" alignment-baseline="central" fill="black">
+                Exit Room
+            </text>
+        </svg>
+        <svg class="main-button" id="extend-btn" width="160" height="40" fill=#2D767F>
+            <line class="top" x1="-160" y1="0" x2="160" y2="0"/>
+            <line class="left" x1="0" y1="0" x2="0" y2="90"/>
+            <line class="bottom" x1="0" y1="40" x2="320" y2="40"/>
+            <line class="right" x1="160" y1="-60" x2="160" y2="50"/>
+            <text x="50%" y="50%" font-size="16" text-anchor="middle" alignment-baseline="central" fill="black">Extend
+            </text>
+        </svg>
+    </div>
+</div>
     </div>
 
 <!-- <div class='topic_chooser'>
@@ -94,8 +122,8 @@
     <ul class='questions'>
     </ul>
 
-   <div class="form-style-5">
-<input type="submit" class="submit_questions" value="Next"/>
+<div class="form-style-5">
+    <input type="submit" class="submit_questions" value="Next"/>
 </div>
 
 </div>
@@ -130,11 +158,11 @@
 
 <script src="../js/homepagefunc.js"></script>
 <script src="../js/suggestions.js"></script>
+<script type="text/javascript" src="../js/gui.js"></script>
+<script src="../js/jQuery/function.js"></script>
+<script src="../js/font.js"></script>
 <script src="../js/room_helpers.js"></script>
 <script src="../js/room_join.js"></script>
-<script src="../js/jQuery/function.js"></script>
-<script src="../js/jQuery/font.js"></script>
-
 </body>
 
 

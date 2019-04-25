@@ -69,25 +69,50 @@ class Room {
 }
 }
 
+var new_arr = [123];
 $join_btn.click(function(){
 	//Animation part here
-	var room_id = $room_field.val()
+    var room_id = $room_field.val()
 
-	 $('.whole_page').addClass(anim_classes.fadeOutef).one(anim_classes.animationEnd, function () {
-    $(this).removeClass(anim_classes.fadeOutef)
-    $(this).hide()
-  })
+     $('.whole_page').addClass(anim_classes.fadeOutef).one(anim_classes.animationEnd, function () {
+      $(this).removeClass(anim_classes.fadeOutef)
+      $(this).hide()
+    })
 
-  $alert.addClass('animated bounceOutUp').one(anim_classes.animationEnd, function () {
+    $alert.addClass('animated bounceOutUp').one(anim_classes.animationEnd, function () {
 
-    $(this).removeClass('animated bounceOutUp')
-    $(this).hide()  
-})
+      $(this).removeClass('animated bounceOutUp')
+      $(this).hide()  
+    })
 
-   $room_welcome.html(room_id);
-   $room_header.css("display","block");
-   // creation_option(".select_topics");
-});
+    $room_welcome.text(room_id);
+    $room_header.css("display","block");
+    $.post('/api/get-room-data/', {roomId:room_id})
+          .done(function( data ) {
+      var topic_name = data.topic;
+      new_arr = data.questions;
+      var $topic = $('#topic');
+      $('#test').empty();
+      $('.main-button').transition({
+        transform: 'translateY(200px)'
+      }, 1200, function () {
+        $('.container').fadeIn(1000);
+        console.log(new_arr);
+        getquestion(randomized=false);
+        $topic.text(topic_name);
+        $topic.show();
+        $topic.removeClass(anim_classes.bounceOutLeft);
+        $topic.addClass(anim_classes.bounce).one(anim_classes.animationEnd, function () {
+          $topic.removeClass(anim_classes.bounce)
+          test() 
+        });
+        $('.main-button').show();
+        $('.main-button').addClass(anim_classes.fadeInef);
+        console.log(new_arr);
+      })
+    })
+  });
+
 
 
 

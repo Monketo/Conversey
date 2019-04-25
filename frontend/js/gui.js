@@ -6,9 +6,6 @@ var $experiment = $('#test')
 var $topic_selector = $('#mainTopicBtn');
 var $alert = $('.no_questions')
 
-$(function(){
-  creation_option('#mainTopicBtn');
-})
 
 /*topics and questions*/
 var questions_test = {
@@ -112,8 +109,8 @@ function mainfunc (topic_name) {
   if (!clicked) {
     $('.main-button').transition({
       transform: 'translateY(200px)'
-    }, 1200, function () {
-      $screen.fadeIn(1000);
+    }, 0, function () {
+      $screen.fadeIn(0);
 
       $('.primary, .primary1, #mainTopicBtn').addClass(anim_classes.fadeOutef)
       .one(anim_classes.animationEnd, function () {
@@ -129,6 +126,7 @@ function mainfunc (topic_name) {
 }
 
 $('.primary2').on('click', function () {
+    new_arr = pickProperty(shuffled, questions_test).slice(0);
     var $start_btns = $('.primary, .primary1, #mainTopicBtn')
                 .removeClass(anim_classes.fadeOutef);
     var $test_btns = $('.tertiary,.secondary, .primary2')
@@ -180,7 +178,7 @@ $('.new_topic').on('click', function () {
 })
 
 $('#sel_topic_btn').click(function(){
-
+ creation_option('#mainTopicBtn');
  $('.topic_chooser,.whole_page').show();
    $('.whole_page').addClass('animated fadeIn').one(anim_classes.animationEnd,function(){
    $(this).removeClass('animated fadeIn')
