@@ -58,6 +58,16 @@ body{
 .buttons{
 	z-index:0;
 }
+
+.topic-main-btn{
+	background-color: white;
+	border: 1px solid rgb(44, 161, 108);
+	width: 160px; 
+	height:40px; 
+	margin-right: 5px;
+}
+background-color: white; border: 1px solid rgb(44, 161, 108); width: 160px; height:40px; margin-right: 5px"
+
 ul{
 	list-style:none;
 	

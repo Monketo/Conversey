@@ -5,6 +5,10 @@ var $extendTopic = $('.secondary')
 var $experiment = $('#test')
 var $alert = $('.no_questions')
 
+$(function(){
+    creation_option('#mainTopicBtn');
+})
+
 /*topics and questions*/
 var questions_test = {
 
@@ -80,7 +84,6 @@ function mainfunc () {
   $topic.show()
   $topic.removeClass(anim_classes.bounceOutLeft)
   getquestion()
-  $topic.text(arrayOfTopics)
   if (!showntopic) {
     $topic.addClass(anim_classes.bounce).one(anim_classes.animationEnd, function () {
       $topic.removeClass(anim_classes.bounce)
@@ -118,7 +121,8 @@ $('.secondary').on('click', function () {
   getquestion()
   test()
   console.log('The button \'extend\' is clicked')
-  $topic.addClass(anim_classes.bounceOutLeft).one(anim_classes.animationEnd, function () {
+  $
+  .addClass(anim_classes.bounceOutLeft).one(anim_classes.animationEnd, function () {
 
     $topic.text(arrayOfTopics)
     $topic.removeClass(anim_classes.bounceOutLeft)
