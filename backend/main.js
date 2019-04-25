@@ -19,10 +19,6 @@ function configureEndpoints(app) {
   app.post('/api/add-topic/', api.addNewTopic);
   app.post('/api/add-room/', api.addRoom);
   app.post('/api/add-question/', api.addNewQuestion);
-  app.get('/exit-room/', function(req, res) {
-    req.clearCookie('roomData');
-    res.sendStatus(200);
-  })
   
   // app.post('/api/create-user/', api.createUser);
 

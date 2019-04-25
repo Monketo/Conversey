@@ -7,21 +7,6 @@ var $topic_selector = $('#mainTopicBtn');
 var $alert = $('.no_questions')
 
 $(function(){
-  var cookies = document.cookie.split(';').reduce((cookieObject, cookieString) => {
-    let splitCookie = cookieString.split('=').map((cookiePart) => { cookiePart.trim() })
-    try {
-      cookieObject[splitCookie[0]] = JSON.parse(splitCookie[1])
-    } catch (error) {
-      cookieObject[splitCookie[0]] = splitCookie[1]
-    }
-    return cookieObject
-  });
-  if ('roomData' in cookies){
-    var roomData = cookies['roomData'];
-    var topic = roomData.topic;
-    var questions = roomData.questions;
-
-  }
   creation_option('#mainTopicBtn');
 })
 

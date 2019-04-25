@@ -48,7 +48,6 @@ exports.getRoomData = function(req, res) {
   	topic: RoomsData[roomId].topic,
   	questions: RoomsData[roomId].questions_list
   }
-  req.cookie("roomData", roomData);
   res.send(roomData);
 }
 // exports.createUser = function () {
