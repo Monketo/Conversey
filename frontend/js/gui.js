@@ -7,7 +7,22 @@ var $topic_selector = $('#mainTopicBtn');
 var $alert = $('.no_questions')
 
 $(function(){
-    creation_option('#mainTopicBtn');
+  var cookies = document.cookie.split(';').reduce((cookieObject, cookieString) => {
+    let splitCookie = cookieString.split('=').map((cookiePart) => { cookiePart.trim() })
+    try {
+      cookieObject[splitCookie[0]] = JSON.parse(splitCookie[1])
+    } catch (error) {
+      cookieObject[splitCookie[0]] = splitCookie[1]
+    }
+    return cookieObject
+  });
+  if ('roomData' in cookies){
+    var roomData = cookies['roomData'];
+    var topic = roomData.topic;
+    var questions = roomData.questions;
+
+  }
+  creation_option('#mainTopicBtn');
 })
 
 /*topics and questions*/
@@ -48,9 +63,12 @@ var pickProperty = function (obj, obj2) { //picking a first element, then replac
 
 var new_arr = pickProperty(shuffled, questions_test).slice(0);
 
-var getquestion = function () {
-
-  get_question = new_arr[Math.floor(Math.random() * new_arr.length)]
+var getquestion = function (randomized = true) {
+  var index = 0;
+  if (randomized) {
+    index = Math.floor(Math.random() * new_arr.length)
+  }
+  get_question = new_arr[index];
   var indexOfQuestion = new_arr.indexOf(get_question)
 
   if (new_arr.length > 0) { //trying to avoid repeating of questions 

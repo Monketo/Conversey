@@ -1,4 +1,6 @@
 var db = require('./db');
+var rooms = require('./rooms_data');
+var RoomsData = rooms.Rooms;
 
 exports.getTopicsList = function(req, res) {
     var query = db.retrieveTopics();
@@ -31,6 +33,23 @@ exports.addNewTopic = function(req, res) {
   res.sendStatus(200);
 };
 
+exports.addRoom = function(req, res) {
+  rooms.addRoom(req.body);
+  res.sendStatus(200);
+}
+
+exports.getRoomData = function(req, res) {
+  var roomId = req.body.roomId;
+  if (!roomId || !(roomId in RoomsData)){
+		res.sendStatus(404);
+  }
+  var roomData = {
+  	topic: RoomsData[roomId].topic,
+  	questions: RoomsData[roomId].questions_list
+  }
+  req.cookie("roomData", roomData);
+  res.send(roomData);
+}
 // exports.createUser = function () {
 
 // }

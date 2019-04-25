@@ -2,20 +2,28 @@ var express = require('express');
 var path = require('path');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
 var session = require('express-session');
 
 function configureEndpoints(app) {
   var api = require('./api');
-
+  app.use(cookieParser()); 
   //Налаштування URL за якими буде відповідати сервер
   app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, '../frontend/html/index.html'));
   });
 
   app.get('/api/get-topics-list/', api.getTopicsList);
+  app.get('/api/get-room-data/', api.getRoomData);
   app.post('/api/get-questions-by-topic/', api.getQuestionsByTopic);
   app.post('/api/add-topic/', api.addNewTopic);
+  app.post('/api/add-room/', api.addRoom);
   app.post('/api/add-question/', api.addNewQuestion);
+  app.get('/exit-room/', function(req, res) {
+    req.clearCookie('roomData');
+    res.sendStatus(200);
+  })
+  
   // app.post('/api/create-user/', api.createUser);
 
   //Якщо не підійшов жоден url, тоді повертаємо файли з папки frontend

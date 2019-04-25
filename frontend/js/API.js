@@ -33,12 +33,20 @@ exports.getTopics = function(callback) {
   backendGet("/api/get-topics-list/", callback);
 };
 
+exports.getRoomData = function(callback) {
+  backendGet("/api/get-room-data/", callback);
+};
+
 exports.getQuestionsByTopic = function(topic_info, callback) {
   backendPost("/api/get-questions-by-topic/", topic_info, callback);
 };
 
 exports.addQuestion = function(question_info, callback) {
   backendPost("/api/add-question/", question_info, callback);
+};
+
+exports.addRoom = function(room_info, callback) {
+  backendPost("/api/add-room/", room_info, callback);
 };
 
 exports.addTopic = function(topic_info, callback) {
