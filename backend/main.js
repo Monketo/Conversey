@@ -14,7 +14,7 @@ function configureEndpoints(app) {
   });
 
   app.get('/api/get-topics-list/', api.getTopicsList);
-  app.get('/api/get-room-data/', api.getRoomData);
+  app.post('/api/get-room-data/', api.getRoomData);
   app.post('/api/get-questions-by-topic/', api.getQuestionsByTopic);
   app.post('/api/add-topic/', api.addNewTopic);
   app.post('/api/add-room/', api.addRoom);
