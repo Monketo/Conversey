@@ -3,6 +3,7 @@ var $screen = $('.container')
 var $newTopic = $('.tertiary')
 var $extendTopic = $('.secondary')
 var $experiment = $('#test')
+var $topic_selector = $('#mainTopicBtn');
 var $alert = $('.no_questions')
 
 $(function(){
@@ -80,13 +81,14 @@ $('.primary,.tertiary').on('click', mainfunc)
 
 function mainfunc () {
 
+  $topic_selector.hide();
   $experiment.empty()
   $topic.show()
   $topic.removeClass(anim_classes.bounceOutLeft)
   getquestion()
   $topic.text(arrayOfTopics);
   if (!showntopic) {
-    $topic.addClass(anim_classes.bounce).one(anim_classes.animationEnd, function () {
+      $topic.addClass(anim_classes.bounce).one(anim_classes.animationEnd, function () {
       $topic.removeClass(anim_classes.bounce)
       test()
     })
@@ -104,8 +106,8 @@ function mainfunc () {
 
       $('.primary, .primary1').addClass(anim_classes.fadeOutef).one(anim_classes.animationEnd, function () {
         $('.primary, .primary1').hide();
-        $('.tertiary,.secondary').show();
-        $('.tertiary,.secondary').addClass(anim_classes.fadeInef);
+        $('.tertiary,.secondary, .primary2').show();
+        $('.tertiary,.secondary, .primary2').addClass(anim_classes.fadeInef);
       })
 
       clicked = true
