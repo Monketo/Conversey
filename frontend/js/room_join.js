@@ -13,7 +13,6 @@ var starter = function(){
   });
 }
 
-
 var checkLinkParams = function(){
 
 	var href = window.location.href;
@@ -31,12 +30,13 @@ var checkLinkParams = function(){
 }
 
 var displayFailure = function(){
-console.log('Plak-plak')
+console.log('Plak-plak');
 }
 
 var displayData = function(data, room_id){
 $room_welcome.html(room_id);
 $room_header.css("display","block");
+console.log(data);
 }
 
 checkLinkParams();
