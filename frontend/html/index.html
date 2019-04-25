@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/room.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.3.0/snap.svg-min.js"></script>
     <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
@@ -90,7 +91,6 @@
             </svg>
         </li>
 
-
          <li class="scaler">
             <svg class="navelement clearfix" width="160" height="40" fill=#fff>
 
@@ -135,22 +135,22 @@
 
     </div>
 
+    <div class='topic_chooser no_questions'>
+        <div class="control-group">
+            <h1 >Choose your topic</h1>
+            <div>
+              <select class="main-button select_topics" id="mainTopicBtn">
+              </select>
+            </div>
+            <div class="form-style-5" style="width: auto;">
+                <input type="submit" class="select_topic" id="primary-btn" value="Next"/>
+            </div>
+        </div>
+    </div>
 
-    <select class="topic-main-btn" id="mainTopicBtn">
-    </select>
-
-    <div class="buttons">
-
-
-        <svg class="main-button primary" width="160" height="40" fill=#2D767F>
-            <line class="top" x1="-160" y1="0" x2="160" y2="0"/>
-            <line class="left" x1="0" y1="0" x2="0" y2="90"/>
-            <line class="bottom" x1="0" y1="40" x2="320" y2="40"/>
-            <line class="right" x1="160" y1="-60" x2="160" y2="50"/>
-            <text x="50%" y="50%" font-size="16" text-anchor="middle" alignment-baseline="central" fill="black">Random
-                topic
-            </text>
-        </svg>
+    <div class="buttons conf-btn">
+<!--         <select class="main-button topic-main-btn" id="mainTopicBtn">
+        </select> -->
 
         <svg class="main-button primary1" width="160" height="40" fill=#2D767F>
 
@@ -164,6 +164,9 @@
                 </text>
             </a>
         </svg>
+    </div>
+
+    <div class="buttons action-btn">
         <svg class="main-button primary2" width="160" height="40" fill=#2D767F>
             <line class="top" x1="-160" y1="0" x2="160" y2="0"/>
             <line class="left" x1="0" y1="0" x2="0" y2="90"/>
@@ -193,7 +196,23 @@
             </text>
         </svg>
 
-
+        <svg class="main-button primary" id="sel_topic_btn" width="160" height="40" fill=#2D767F>
+            <line class="top" x1="-160" y1="0" x2="160" y2="0"/>
+            <line class="left" x1="0" y1="0" x2="0" y2="90"/>
+            <line class="bottom" x1="0" y1="40" x2="320" y2="40"/>
+            <line class="right" x1="160" y1="-60" x2="160" y2="50"/>
+            <text x="50%" y="50%" font-size="16" text-anchor="middle" alignment-baseline="central" fill="black">Choose Topic
+            </text>
+        </svg>
+        <svg class="main-button primary" id="primary-rnd-btn" width="160" height="40" fill=#2D767F>
+            <line class="top" x1="-160" y1="0" x2="160" y2="0"/>
+            <line class="left" x1="0" y1="0" x2="0" y2="90"/>
+            <line class="bottom" x1="0" y1="40" x2="320" y2="40"/>
+            <line class="right" x1="160" y1="-60" x2="160" y2="50"/>
+            <text x="50%" y="50%" font-size="16" text-anchor="middle" alignment-baseline="central" fill="black">Random
+                topic
+            </text>
+        </svg>
     </div>
 </div>
 <div class="no_questions">
@@ -216,6 +235,6 @@
     <script src="../js/gui.js"></script>
     <script src="../js/homepagefunc.js"></script>
     <script src="../js/jQuery/function.js"></script>
-    <script src="../js/jQuery/font.js"></script>
+    <script src="../js/font.js"></script>
 
 </html>
