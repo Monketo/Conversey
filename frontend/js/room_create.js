@@ -3,7 +3,6 @@ $(document).ready(function() {
 	
   });
 
-
 $room_topic.click(function(){
 	var topic = $('.select_topics').val()
 	$('.topic_chooser').addClass('animated bounceOutUp');

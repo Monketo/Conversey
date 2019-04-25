@@ -1,5 +1,6 @@
 var db = require('./db');
-var rooms = require('./rooms_data');
+var rooms = require('./room_data');
+
 var RoomsData = rooms.Rooms;
 
 exports.getTopicsList = function(req, res) {
