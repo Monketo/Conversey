@@ -34,7 +34,6 @@ var displayFailure = function(){
 }
 
 var getquestion = function (questions_arr, randomized = true) {
-console.trace();
   var index = 0;
   if (randomized) {
     index = Math.floor(Math.random() * questions_arr.length)
@@ -78,7 +77,6 @@ $('#exit-btn').on('click', function(){
 });
 
 $('#extend-btn').on('click', function(){
-	console.log('Indside extend');
 	getquestion(arr, randomized=false);
 	$('#test').empty();
 	test();
