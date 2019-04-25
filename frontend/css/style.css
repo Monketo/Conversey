@@ -58,10 +58,11 @@ body{
 .buttons{
 	position: relative;
 	z-index:0;
-	flex: 1 0 100%;
+	padding-left: 5px;
+/*	flex: 1 0 100%;*/
 }
 
-.primary1 {
+/*.primary1 {
 	margin-left: 180px;
 }
 
@@ -72,7 +73,7 @@ body{
 .action-btn * {
 	margin-left: 10px;
 	margin-right: 10px;
-}
+}*/
 .topic-main-btn{
 	position: absolute;
 	top: 0;

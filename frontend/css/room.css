@@ -107,6 +107,13 @@
  	padding:10px 20px;
  }
 
+ .no_questions .control-group{
+
+ box-shadow: none;
+ padding:40px;
+
+}
+
 .room_id{
 	max-width:300px;
 }

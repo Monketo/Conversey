@@ -175,6 +175,31 @@ $('.new_topic').on('click', function () {
     $topic.removeClass(anim_classes.bounceOutLeft)
   })
 })
+
+$('#sel_topic_btn').click(function(){
+
+ $('.topic_chooser,.whole_page').show();
+   $('.whole_page').addClass('animated fadeIn').one(anim_classes.animationEnd,function(){
+   $(this).removeClass('animated fadeIn')
+   });
+
+  $alert.addClass('animated bounceIn').one(anim_classes.animationEnd,function(){
+  $(this).removeClass('animated bouceIn')
+  });
+
+})
+
+$('.select_topic').click(function(){
+
+  $('.whole_page').addClass(anim_classes.fadeOutef).one(anim_classes.animationEnd, function () {
+      $(this).removeClass(anim_classes.fadeOutef)
+      $(this).hide()
+    })
+    $('.topic_chooser').addClass('animated bounceOutUp').one(anim_classes.animationEnd, function () {
+      $(this).removeClass('animated bounceOutUp')
+      $(this).hide()
+    })
+})
 	
 	
 	
