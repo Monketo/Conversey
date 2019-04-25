@@ -40,7 +40,7 @@ exports.addRoom = function(req, res) {
 }
 
 exports.getRoomData = function(req, res) {
-  var roomId = req.body.roomId;
+  var roomId = req.query.roomId;
   if (!roomId || !(roomId in RoomsData)){
 		res.sendStatus(404);
   }
