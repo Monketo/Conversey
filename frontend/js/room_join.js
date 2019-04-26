@@ -30,7 +30,7 @@ var checkLinkParams = function(){
 }
 
 var displayFailure = function(){
-	console.log('Plak-plak')
+	$('.not_exist').show(200);
 }
 
 var getquestion = function (questions_arr, randomized = true) {
@@ -49,6 +49,7 @@ var getquestion = function (questions_arr, randomized = true) {
 var displayData = function(data, room_id){
 	console.trace();
     $room_welcome.text(data.title);
+    $('.room_id_num').text(room_id);
     $room_header.css("display","block");
 	var topic_name = data.topic;
 	arrayOfTopics = [topic_name];

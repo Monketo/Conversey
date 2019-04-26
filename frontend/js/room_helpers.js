@@ -29,9 +29,24 @@ var get_room = function(room_id){
   console.log(room_id);
   $.post('/api/get-room-data/',{roomId:room_id})
     .done(function(data){
+      console.log('in success here');
+
+      $('.whole_page').addClass(anim_classes.fadeOutef).one(anim_classes.animationEnd, function () {
+      $(this).removeClass(anim_classes.fadeOutef)
+      $(this).hide()
+    })
+
+    $alert.addClass('animated bounceOutUp').one(anim_classes.animationEnd, function () {
+
+      $(this).removeClass('animated bounceOutUp')
+      $(this).hide()  
+    })
+
       displayData(data,room_id);
     })
     .fail(function(){
+
+
       displayFailure();
     })
 
@@ -75,17 +90,6 @@ class Room {
 $join_btn.click(function(){
 	//Animation part here
     var room_id = $room_field.val()
-
-     $('.whole_page').addClass(anim_classes.fadeOutef).one(anim_classes.animationEnd, function () {
-      $(this).removeClass(anim_classes.fadeOutef)
-      $(this).hide()
-    })
-
-    $alert.addClass('animated bounceOutUp').one(anim_classes.animationEnd, function () {
-
-      $(this).removeClass('animated bounceOutUp')
-      $(this).hide()  
-    })
 
     get_room(room_id);
   });

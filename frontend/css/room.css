@@ -1,9 +1,11 @@
 .form-style-5{
+	position: relative;
 	width: inherit;
-	/* margin: 0 auto; */
-	/* padding: 10px 20px; */
+	margin: 0 auto;
+	padding: 10px 20px;
 	background: white;
 	border-radius: 8px;
+	/* height: 40vh; */
 }
 .form-style-5 fieldset{
 	border: none;
@@ -149,7 +151,7 @@
 
 .questions{
 	display: block;
-	margin: 60px 20px;
+	margin: 50px 20px 20px;
 	text-align: center;
 }
 
@@ -186,6 +188,26 @@
 [contenteditable="true"]:focus{
 border:none;
 outline:none;
+}
+
+.not_exist{
+	color:red;
+	display: none;
+}
+
+.questions_displayer{
+	overflow-y: scroll;
+	height:700px;
+}
+
+.id_num{
+	
+	font-size: 12px;
+}
+.room_id_num{
+	color:black !important;
+	user
+	-select: text !important;
 }
 
 
